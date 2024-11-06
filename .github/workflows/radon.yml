@@ -31,16 +31,14 @@ jobs:
       # 4. Run Radon for Cyclomatic Complexity (CC)
       - name: Run Radon CC
         run: |
-          radon cc -s -a -j -o radon_cc.json .
-        # Explanation:
+          radon cc -s -a > radon_cc.txt .
+        # Explanation from the radon documentation
         # - cc: Compute Cyclomatic Complexity
         # - -s: Sort results by complexity
         # - -a: Print average complexity
-        # - -j: Output in JSON format
-        # - -o: Output file
 
       # 5. Run Radon for Maintainability Index (MI)
       - name: Run Radon MI
         run: | 
-          radon mi -s -j -o radon_mi.json .
+          radon mi -s > radon_mi.txt .
           

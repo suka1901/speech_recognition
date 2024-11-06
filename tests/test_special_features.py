@@ -10,6 +10,7 @@ import speech_recognition as sr
 class TestSpecialFeatures(unittest.TestCase):
     def setUp(self):
         self.AUDIO_FILE_EN = os.path.join(os.path.dirname(os.path.realpath(__file__)), "english.wav")
+        self.AUDIO_FILE_EN_MP3 = os.path.join(os.path.dirname(os.path.realpath(__file__)), "english.mp3")
         self.addTypeEqualityFunc(str, self.assertSameWords)
 
     # @unittest.skipIf(sys.platform.startswith("win"), "skip on Windows")
@@ -26,6 +27,17 @@ class TestSpecialFeatures(unittest.TestCase):
         if set_tested != set_reference:
             raise self.failureException(msg if msg is not None else "%r doesn't consist of the same words as %r" % (tested, reference))
 
+       # added test for MP3
+    def test_incompatible_audio_file_error(self):
+        r = sr.Recognizer()
+
+        with self.assertRaises(ValueError) as context:
+            with sr.AudioFile(self.AUDIO_FILE_EN_MP3) as source:r.record(source)
+
+        self.assertEqual(
+            str(context.exception),
+            "Audio file could not be read as PCM WAV, AIFF/AIFF-C, or Native FLAC; check if file is corrupted or in another format"
+        )
 
 if __name__ == "__main__":
     unittest.main()

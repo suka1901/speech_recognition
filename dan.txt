@@ -1,0 +1,47 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.6, pytest-8.3.3, pluggy-1.5.0
+rootdir: C:\Users\suraj\GitHub\speech_recognition
+plugins: anyio-4.6.2.post1, cov-5.0.0
+collected 43 items
+
+tests\recognizers\test_google.py ........                                [ 18%]
+tests\recognizers\test_whisper.py .....                                  [ 30%]
+tests\test_audio.py ...............                                      [ 65%]
+tests\test_recognition.py sssssss.ss                                     [ 88%]
+tests\test_special_features.py ..                                        [ 93%]
+tests\test_whisper_recognition.py ...WARNING: Failed to generate report: No data to report.
+
+                                                                         [100%]
+
+============================== warnings summary ===============================
+speech_recognition\__init__.py:7
+  C:\Users\suraj\GitHub\speech_recognition\speech_recognition\__init__.py:7: DeprecationWarning: 'aifc' is deprecated and slated for removal in Python 3.13
+    import aifc
+
+speech_recognition\__init__.py:8
+  C:\Users\suraj\GitHub\speech_recognition\speech_recognition\__init__.py:8: DeprecationWarning: 'audioop' is deprecated and slated for removal in Python 3.13
+    import audioop
+
+tests/test_special_features.py::TestSpecialFeatures::test_sphinx_keywords
+tests/test_special_features.py::TestSpecialFeatures::test_sphinx_keywords
+tests/test_special_features.py::TestSpecialFeatures::test_sphinx_keywords
+  C:\Users\suraj\GitHub\speech_recognition\speech_recognition\__init__.py:657: DeprecationWarning: default_config() is deprecated, just call Config() constructor
+    config = pocketsphinx.Decoder.default_config()
+
+tests/test_special_features.py::TestSpecialFeatures::test_sphinx_keywords
+tests/test_special_features.py::TestSpecialFeatures::test_sphinx_keywords
+tests/test_special_features.py::TestSpecialFeatures::test_sphinx_keywords
+  C:\Users\suraj\GitHub\speech_recognition\speech_recognition\__init__.py:675: DeprecationWarning: set_kws() is deprecated, use add_kws() instead
+    decoder.set_kws("keywords", f.name)
+
+tests/test_special_features.py::TestSpecialFeatures::test_sphinx_keywords
+tests/test_special_features.py::TestSpecialFeatures::test_sphinx_keywords
+tests/test_special_features.py::TestSpecialFeatures::test_sphinx_keywords
+  C:\Users\suraj\GitHub\speech_recognition\speech_recognition\__init__.py:676: DeprecationWarning: set_search() is deprecated, use activate_search() instead
+    decoder.set_search("keywords")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+
+---------- coverage: platform win32, python 3.12.6-final-0 -----------
+
+================= 34 passed, 9 skipped, 11 warnings in 13.81s =================
